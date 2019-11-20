@@ -4,12 +4,12 @@ import Typography from '@material-ui/core/Typography';
 
 
 
-const TrelloCard = () => {
+const TrelloCard = ({ text }) => {
     return (
         <>
         <Card >
             <Typography color="textSecondary" gutterBottom>
-            Word of the Day
+            {text}
             </Typography>
         </Card>
     </>
