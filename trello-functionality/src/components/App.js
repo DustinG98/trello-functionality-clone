@@ -3,11 +3,25 @@ import TrelloList from './TrelloList'
 import { connect } from 'react-redux'
 import TrelloActionButton from './TrelloActionButton'
 import { DragDropContext } from 'react-beautiful-dnd'
+import { sort } from '../actions'
  
 function App(props) {
   const { lists } = props;
-  const onDragEnd = () => {
-    //Reordering logic
+  const onDragEnd = (result) => {
+    const { destination, source, draggableId } = result;
+    
+    if(!destination) {
+      return;
+    }
+
+    props.dispatch(sort(
+      source.droppableId,
+      destination.droppableId,
+      source.index,
+      destination.index,
+      draggableId
+    ))
+
   }
   return (
     <DragDropContext onDragEnd={onDragEnd}>
