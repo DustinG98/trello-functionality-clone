@@ -12,6 +12,16 @@ const initialState = [
                 text: "Do the dishes"
             }
         ]
+    },
+    {
+        title: "Finished List",
+        id: 0,
+        cards: [
+            {
+                id: 0,
+                text: "FEED YOURSELF"
+            }
+        ]
     }
 ];
 

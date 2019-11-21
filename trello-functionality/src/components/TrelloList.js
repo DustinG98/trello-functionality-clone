@@ -17,10 +17,11 @@ const TrelloList = (props) => {
 
 const styles = {
     container: {
-        backgroundColor: "gray",
+        backgroundColor: "#dfe3e6",
         borderRadius: 3,
         width: 300,
-        padding: 8
+        padding: 8,
+        marginRight: 8
     }
 }
 

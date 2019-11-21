@@ -9,14 +9,21 @@ function App(props) {
   return (
     <div className="App">
       <h2>Hello World!</h2>
-      <TrelloList title="test"/>
+      <div style={styles.listsContainer}>
       { lists.map(list => {
       console.log(list.cards)
       return <TrelloList title={list.title} cards={list.cards}/>; 
       
       }) }
+      </div>
     </div>
   );
+}
+
+const styles = {
+  listsContainer: {
+    display: "flex"
+  }
 }
 
 const mapStateToProps = state => ({
