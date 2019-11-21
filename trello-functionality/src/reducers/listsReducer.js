@@ -1,7 +1,7 @@
 import { CONSTANTS } from '../actions'
 
 let listID = 2;
-let cardID = 3;
+let cardID = 4;
 
 const initialState = [
     {
@@ -10,11 +10,15 @@ const initialState = [
         cards: [
             {
                 id: `card-${0}`,
-                text: "Feed The Dogs"
+                text: "Add remove card functionality"
             },
             {
                 id: `card-${1}`,
-                text: "Do the dishes"
+                text: "Add remove list functionality"
+            },
+            {
+                id: `card-${2}`,
+                text: "Add drag drop functionality for lists"
             }
         ]
     },
@@ -23,7 +27,7 @@ const initialState = [
         id: `list=${1}`,
         cards: [
             {
-                id: `card-${2}`,
+                id: `card-${3}`,
                 text: "FEED YOURSELF"
             }
         ]
@@ -34,6 +38,7 @@ const initialState = [
 
 const listsReducer = (state = initialState, action) => {
     switch (action.type) {
+        //ADD LIST
         case CONSTANTS.ADD_LIST:
             const newList = {
                 title: action.payload,
@@ -42,6 +47,7 @@ const listsReducer = (state = initialState, action) => {
             }
             listID += 1
             return [...state, newList];
+        //ADD CARD
         case CONSTANTS.ADD_CARD: {
             const newCard = {
                 text: action.payload.text,
@@ -60,7 +66,7 @@ const listsReducer = (state = initialState, action) => {
             })
             return newState;
         }
-
+        //DRAG DROP
             case CONSTANTS.DRAG_HAPPENED:
                 const { droppableIdStart,
                     droppableIdEnd,

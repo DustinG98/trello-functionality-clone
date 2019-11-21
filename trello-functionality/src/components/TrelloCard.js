@@ -2,6 +2,7 @@ import React from 'react';
 import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
 import CardContent from '@material-ui/core/CardContent'
+import Icon from '@material-ui/core/Icon'
 import { Draggable } from 'react-beautiful-dnd'
 import styled from 'styled-components'
 
@@ -20,6 +21,7 @@ const TrelloCard = ({ text, id, index }) => {
                                 <Typography color="textSecondary" gutterBottom>
                                 {text}
                                 </Typography>
+                                <Icon style={{ zIndex: 999 }}>remove</Icon>
                             </CardContent>
                         </Card> 
                     </CardContainer>
