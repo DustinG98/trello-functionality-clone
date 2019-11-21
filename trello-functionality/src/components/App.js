@@ -1,6 +1,7 @@
 import React from 'react';
 import TrelloList from './TrelloList'
 import { connect } from 'react-redux'
+import TrelloActionButton from './TrelloActionButton'
  
 function App(props) {
 
@@ -12,6 +13,7 @@ function App(props) {
       { lists.map(list => {
       return <TrelloList key={list.id} title={list.title} cards={list.cards}/>; 
       }) }
+      <TrelloActionButton list />
       </div>
     </div>
   );
