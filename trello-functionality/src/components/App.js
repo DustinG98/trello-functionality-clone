@@ -10,7 +10,7 @@ const ListContainer = styled.div`
   display: flex;
 `
  
-function App(props) {
+const App = (props) => {
   const { lists } = props;
   const onDragEnd = (result) => {
     const { destination, source, draggableId } = result;

@@ -21,14 +21,13 @@ const TrelloList = (props) => {
         <Droppable droppableId={String(listID)}>
             {(provided) => {
               return <ListContainer {...provided.droppableProps} ref={provided.innerRef}>
-                <h4>{title}</h4>
+                  <h4>{title}</h4>
                 {(cards !== undefined) ? cards.map((card, index) => <TrelloCard index={index} id={card.id} key={card.id} text={card.text}/>) : null}
                     
                 {provided.placeholder}
                 <TrelloActionButton listID={listID}/>
               </ListContainer>  
             }}
-            
         </Droppable>
     )
 }
